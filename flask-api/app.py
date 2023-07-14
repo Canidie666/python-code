@@ -48,7 +48,7 @@ class myApi(Resource):
 
         parser = reqparse.RequestParser()
         parser.add_argument("name", required=True)
-        parser.add_argument("number" defautl=" ")
+        parser.add_argument("number", default=" ")
         param = parser.parse_args()
 
         for item in data:
@@ -60,8 +60,10 @@ class myApi(Resource):
             "number": param["number"]
         }
 
+        data.append(item)
+
         with open("data.json", "w") as writeJson:
-            json.dump(writeJson)
+            json.dump(data, writeJson)
 
         return("Success")
 
