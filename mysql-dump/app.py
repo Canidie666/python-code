@@ -8,7 +8,7 @@ db_user = config.get("Credentials", "db_user")
 db_password = config.get("Credentials", "db_password")
 db_host = config.get("Credentials", "db_host")
 
-source = "/home/canidie/mysql-dump"
+source = "/home/user/mysql-dump"
 dump_dir = source + os.sep + time.strftime("%d.%m.%Y")
 
 if not os.path.exists(dump_dir):
